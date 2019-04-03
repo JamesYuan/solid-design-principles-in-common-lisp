@@ -6,7 +6,7 @@
 
 ### Bad
 
-```scheme
+{%ace lang='lisp'%}
 (defclass printer ()
   ((document-type
     :initarg :document-type
@@ -22,7 +22,7 @@
 (process-email printer-one)
 (send-email printer-one)
 
-```
+{%endace%}
 
 
 
