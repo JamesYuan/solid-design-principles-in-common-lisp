@@ -5,4 +5,5 @@
 * [S: Single Responsibility ](s-single-responsibility.md)
 * [O: Open/Closed](o-openclosed.md)
 * [L: Liskov Substitution](l-liskov-substitution.md)
+* [I: Interface Segregation](i-interface-segregation.md)
 
