@@ -6,6 +6,7 @@
 
 ### Bad
 
+```scheme
 (defclass printer ()
   ((document-type
     :initarg :document-type
@@ -20,7 +21,7 @@
 (defvar printer-one (make-instance 'printer :document-type "docx"))
 (process-email printer-one)
 (send-email printer-one)
-
+```
 
 
 
