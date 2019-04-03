@@ -6,7 +6,7 @@
 
 ### Bad
 
-{%ace lang='lisp'%}
+{%ace lang='lisp' theme='monokai' edit=false check=true%}
 (defclass printer ()
   ((document-type
     :initarg :document-type
