@@ -6,7 +6,7 @@
 
 ### Bad
 
-```
+```scheme
 (defclass printer ()
   ((document-type
     :initarg :document-type
