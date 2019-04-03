@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gitbook pdf ./ solid-design-principles-with-common-lisp.pdf
+gitbook pdf ./ solid-design-principles-in-common-lisp.pdf
