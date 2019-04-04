@@ -5,7 +5,6 @@
 ### Bad
 
 ```scheme
-
 (defclass truck ()
   ((brand
    :initarg :brand
@@ -19,10 +18,7 @@
 
 (defmethod send-detail ((self truck) customer-id)
   "send truck's brand detail to customer..")
-```
-
-### Good
-```scheme
+  
 (defclass truck ()
   ((brand
    :initarg :brand
