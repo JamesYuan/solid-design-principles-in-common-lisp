@@ -29,6 +29,7 @@
 
 (defmethod set-brand ((self truck) new-brand)
   (setf (brand self) new-brand))
+```
 
 (defclass detail-sender ()
   ((customer-id
@@ -43,7 +44,6 @@
 
 (defmethod send-detail ((self detail-sender))
   (send (customer-id self)))
-```
 
 
 
