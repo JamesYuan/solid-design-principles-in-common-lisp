@@ -44,10 +44,10 @@
   (customer-id self))
 
 (defmethod set-customer-id ((self detail-sender) new-customer-id)
-  (setf (customer-id self) new-brand))
+    (setf (customer-id self) new-customer-id))
 
 (defmethod send-detail ((self detail-sender))
-  (send (get-customer-id)))
+  (send (customer-id self)))
 ```
 
 
