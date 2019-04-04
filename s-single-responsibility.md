@@ -4,7 +4,7 @@
 
 ### Bad
 
-{%ace lang='lisp'%}
+```scheme
 
 (defclass truck ()
   ((brand
@@ -31,10 +31,12 @@
 (defmethod set-brand ((self truck) new-brand)
   (setf (brand self) new-brand))
   
-{%endace%}
+```
 
 ### Good
-{%ace lang='lisp'%}
+
+```scheme
+
 (defclass detail-sender ()
   ((customer-id
     :initarg :customer-id
@@ -48,6 +50,5 @@
 
 (defmethod send-detail ((self detail-sender))
   (send (customer-id self)))
-{%endace%}
-
+```
 
