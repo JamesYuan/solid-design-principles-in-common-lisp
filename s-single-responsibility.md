@@ -5,6 +5,7 @@
 ### Bad
 
 ```scheme
+
 (defclass truck ()
   ((brand
    :initarg :brand
@@ -29,6 +30,7 @@
 
 (defmethod set-brand ((self truck) new-brand)
   (setf (brand self) new-brand))
+  
 ```
 
 (defclass detail-sender ()
