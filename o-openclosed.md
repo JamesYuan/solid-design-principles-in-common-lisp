@@ -35,8 +35,7 @@
 (defclass circle (shape)
   ((radius
     :initarg :radius
-    :reader get-radius
-    :accessor radius)))
+    :reader get-radius)))
 
 (defmethod area ((self shape))
   (* pi (get-radius self) (get-radius self)))
@@ -44,10 +43,11 @@
 (defclass area-calculator ()
   ((shapes
     :initarg :shapes
-    :accessor shapes)))
+    :reader get-shapes)))
 
 (defmethod total-area ((self area-calculator))
   (reduce #'+
-          (mapcar #'area (shapes self))))
+          (mapcar #'area
+                  (get-shapes self))))
 
 ```
