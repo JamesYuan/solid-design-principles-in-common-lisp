@@ -1,8 +1,4 @@
-# Let's Go!
-
-
-
-### What is SOLID?
+# What is SOLID?
 
 * Single Responsibility Principle
 * Open/Closed Principle
