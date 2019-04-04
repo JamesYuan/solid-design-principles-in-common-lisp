@@ -19,7 +19,6 @@
 
 (defmethod send-detail ((self truck) customer-id)
   "send truck's brand detail to customer..")
-
 ```
 
 ### Good
