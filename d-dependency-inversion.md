@@ -53,6 +53,9 @@
 
 (defmethod process ((self mobi-formatter) data-type)
   (format t "~a~%" "mobi formatter's process logic goes here"))
+  
+  
+(defparameter epub-book (make-instance 'printer :data-type "epubs"))
 ```
 
 
