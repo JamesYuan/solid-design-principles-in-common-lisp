@@ -45,7 +45,6 @@
 (print-mobi mobi-book)
 ;; mobi formatter's process logic goes here
 ;; data-type: epubs
-
 ```
 
 ### Good
@@ -80,8 +79,8 @@
 (defparameter epub-book (make-instance 'printer :data-type "epubs"))
 (defparameter mobi-book (make-instance 'printer :data-type "mobis"))
 
-(prints epub-book 'epub-formatter) ;; epub formatter's process logic goes here
-(prints mobi-book 'mobi-formatter) ;; mobi formatter's process logic goes here
+(prints epub-book 'epub-formatter)
+(prints mobi-book 'mobi-formatter)
 ```
 
 
