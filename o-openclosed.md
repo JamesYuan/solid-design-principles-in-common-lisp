@@ -1,8 +1,8 @@
 # O: Open/Closed
 
-##### Software entities \(classes, modules, functions, etc\) should be open for extension, but closed for modification.
+##### Objects or entities should be open for extension, but closed for modification.
 
-What this means is that we should write code that doesn't have to be changed every time the requirements changes.
+What this means is that we should write code that doesn't have to be changed every time the requirements changes. For instance, a class should be easily extendable without modifying the class itself.
 
 ### Bad
 ```scheme
