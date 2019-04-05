@@ -32,6 +32,8 @@ Take a look at the open/closed principle violation example below.
                  (list (make-instance 'circle :radius 5)
                        (make-instance 'circle :radius 6)
                        (make-instance 'circle :radius 2))))
+                       
+(total-area *circle-one*) ;; 204.20352248333654d0
 ```
 
 If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula (a = pi * r^2) without modifying `total-area` method.
