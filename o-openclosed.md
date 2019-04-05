@@ -5,9 +5,10 @@
 What this means is that we should write code that doesn't have to be changed every time the requirements changes. For instance, a class should be easily extendable without modifying the class itself.
 
 Take a look at the open/closed principle violation example below.
-### Bad
-```scheme
 
+### Bad
+
+```scheme
 (defclass circle ()
   ((radius
     :initarg :radius
@@ -25,18 +26,18 @@ Take a look at the open/closed principle violation example below.
                          (get-radius x)
                          (get-radius x)))
                   (get-shapes self))))
-                  
+
 (defparameter *circle-one*
   (make-instance 'area-calculator
                  :shapes
                  (list (make-instance 'circle :radius 5)
                        (make-instance 'circle :radius 6)
                        (make-instance 'circle :radius 2))))
-                       
+
 (total-area *circle-one*) ;; 204.20352248333654d0
 ```
 
-If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula (a = pi * r^2) without modifying `total-area` method.
+If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula \(a = pi \* r^2\) without modifying `total-area` method.
 
 So how can we go over this limit?
 
@@ -45,7 +46,6 @@ Below code shows a better example.
 ### Good
 
 ```scheme
-
 (defclass shape ()
   nil)
 
@@ -66,25 +66,22 @@ Below code shows a better example.
   (reduce #'+
           (mapcar #'area
                   (get-shapes self))))
-                  
+
 (defparameter *circle-one*
   (make-instance 'area-calculator
                  :shapes
                  (list (make-instance 'circle :radius 5)
                        (make-instance 'circle :radius 6)
                        (make-instance 'circle :radius 2))))
-                       
+
 (total-area *circle-one*) ;; 204.20352248333654d0
-
-
 ```
 
-As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area (or triangle, etc), we only have to create a new class with its own method to handle Rectangle area calculation.
+As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area \(or triangle, etc\), we only have to create a new class with its own method to handle Rectangle area calculation.
 
-For example, a new Rectangle class and area method which calculates a simple Rectangle shape area (a = w * h)
+For example, a new Rectangle class and area method which calculates a simple Rectangle shape area \(a = w \* h\)
 
 ```scheme
-
 (defclass rectangle (shape)
   ((width
     :initarg :width
@@ -96,12 +93,11 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 (defmethod area ((self rectangle))
   (* (get-width self)
      (get-height self)))
-
 ```
 
 ### Full Better Example
-```scheme
 
+```scheme
 (defclass shape ()
   nil)
 
@@ -117,6 +113,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
   ((width
     :initarg :width
     :reader get-width)
+    
    (height
     :initarg :height
     :reader get-height)))
@@ -134,7 +131,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
   (reduce #'+
           (mapcar #'area
                   (get-shapes self))))
-                  
+
 (defparameter *circle-one*
   (make-instance 'area-calculator
                  :shapes
@@ -148,8 +145,10 @@ For example, a new Rectangle class and area method which calculates a simple Rec
                  (list (make-instance 'rectangle :height 5 :width 10)
                        (make-instance 'rectangle :height 9 :width 20)
                        (make-instance 'rectangle :height 23 :width 44))))
-               
+
 (total-area *circle-one*) ;; 559.2034923389832d0
 (total-area *rectangle-one*) ;; 1242
-
 ```
+
+
+
