@@ -25,6 +25,8 @@ Take a look at the open/closed principle violation example below.
                          (get-radius x)
                          (get-radius x)))
                   (get-shapes self))))
+                  
+  
 
 ```
 
@@ -67,7 +69,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 
 ```scheme
 
-(defmethod rectangle (shape)
+(defclass rectangle (shape)
   ((width
     :initarg :width
     :reader get-width)
@@ -95,7 +97,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 (defmethod area ((self shape))
   (* pi (get-radius self) (get-radius self)))
 
-(defmethod rectangle (shape)
+(defclass rectangle (shape)
   ((width
     :initarg :width
     :reader get-width)
@@ -116,5 +118,19 @@ For example, a new Rectangle class and area method which calculates a simple Rec
   (reduce #'+
           (mapcar #'area
                   (get-shapes self))))
+                  
+(defparameter *circle-one*
+  (make-instance 'area-calculator
+                 :shapes
+                 (list (make-instance 'circle :radius 5)
+                       (make-instance 'circle :radius 3)
+                       (make-instance 'circle :radius 12))))
+
+(defparameter *rectangle-one*
+  (make-instance 'area-calculator
+                 :shapes
+                 (list (make-instance 'rectangle :height 5 :width 10)
+                       (make-instance 'rectangle :height 9 :width 20)
+                       (make-instance 'rectangle :height 23 :width 44))))
 
 ```
