@@ -61,4 +61,4 @@ Below code shows a better example.
 
 ```
 
-As you've noticed, we moved the function to calculate circle area into its Circle class.  
+As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area (or triangle, etc), we only have to create a new class with its own method to handle Rectangle area calculation.
