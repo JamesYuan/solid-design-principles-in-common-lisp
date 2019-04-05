@@ -28,6 +28,12 @@ Take a look at the open/closed principle violation example below.
 
 ```
 
+If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to it's specific area calculation formula (a = PI * r^2) without modifying `total-area` method.
+
+So how can we go over this limit?
+
+Below code shows a better example.
+
 ### Good
 
 ```scheme
