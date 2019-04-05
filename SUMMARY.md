@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Disclaimer](disclaimer.md)
 * [What is SOLID?](chapter1.md)
 * [S: Single Responsibility ](s-single-responsibility.md)
 * [O: Open/Closed](o-openclosed.md)
