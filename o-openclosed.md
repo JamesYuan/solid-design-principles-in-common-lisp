@@ -4,6 +4,7 @@
 
 What this means is that we should write code that doesn't have to be changed every time the requirements changes. For instance, a class should be easily extendable without modifying the class itself.
 
+Take a look at the open/closed principle violation example below.
 ### Bad
 ```scheme
 
