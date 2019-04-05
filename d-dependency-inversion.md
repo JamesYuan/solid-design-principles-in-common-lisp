@@ -22,13 +22,13 @@
 (defclass epub-formatter ()
   nil)
 
-(defmethod process ((self epub-formatter))
+(defmethod process ((self epub-formatter) data-type)
   (format t "~a~%" "epub formatter's process logic goes here"))
 
 (defclass mobi-formatter ()
   nil)
 
-(defmethod process ((self mobi-formatter))
+(defmethod process ((self mobi-formatter) data-type)
   (format t "~a~%" "mobi formatter's process logic goes here"))
 ```
 
