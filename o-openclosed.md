@@ -26,8 +26,12 @@ Take a look at the open/closed principle violation example below.
                          (get-radius x)))
                   (get-shapes self))))
                   
-  
-
+(defparameter *circle-one*
+  (make-instance 'area-calculator
+                 :shapes
+                 (list (make-instance 'circle :radius 5)
+                       (make-instance 'circle :radius 6)
+                       (make-instance 'circle :radius 2))))
 ```
 
 If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula (a = pi * r^2) without modifying `total-area` method.
