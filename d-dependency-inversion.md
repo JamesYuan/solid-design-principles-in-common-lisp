@@ -59,7 +59,7 @@
 (defparameter mobi-book (make-instance 'printer :data-type "mobis"))
 
 (prints epub-book 'epub-formatter) ;; epub formatter's process logic goes here
-(printers mobi-book 'mobi-formatter) ;; mobi formatter's process logic goes here
+(prints mobi-book 'mobi-formatter) ;; mobi formatter's process logic goes here
 ```
 
 
