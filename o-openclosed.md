@@ -66,6 +66,16 @@ Below code shows a better example.
   (reduce #'+
           (mapcar #'area
                   (get-shapes self))))
+                  
+(defparameter *circle-one*
+  (make-instance 'area-calculator
+                 :shapes
+                 (list (make-instance 'circle :radius 5)
+                       (make-instance 'circle :radius 6)
+                       (make-instance 'circle :radius 2))))
+                       
+(total-area *circle-one*) ;; 204.20352248333654d0
+
 
 ```
 
