@@ -28,7 +28,7 @@ Take a look at the open/closed principle violation example below.
 
 ```
 
-If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula ($$a = \pi r^2$$) without modifying `total-area` method.
+If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula (a = pi * r^2) without modifying `total-area` method.
 
 So how can we go over this limit?
 
@@ -63,7 +63,7 @@ Below code shows a better example.
 
 As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area (or triangle, etc), we only have to create a new class with its own method to handle Rectangle area calculation.
 
-For example, a new Rectangle class and area method which calculates a simple Rectangle shape area ($$a = wh$$)
+For example, a new Rectangle class and area method which calculates a simple Rectangle shape area (a = w * h)
 
 ```scheme
 
