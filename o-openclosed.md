@@ -63,7 +63,7 @@ Below code shows a better example.
 
 As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area (or triangle, etc), we only have to create a new class with its own method to handle Rectangle area calculation.
 
-For example, a new Rectangle class and area method.
+For example, a new Rectangle class and area method which calculates a simple Rectangle shape area ($$a = w * h$$)
 
 ```scheme
 
