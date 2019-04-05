@@ -34,5 +34,26 @@
 
 ### Good
 
+```scheme
+(defclass printer ()
+  ((data-type
+    :initarg :data-type
+    :reader get-data-type)))
+
+(defmethod prints ((self printer) formatter)
+  (let ((f (make-instance formatter)))
+    (process f (get-data-type self))))
+
+
+(defmethod process ((self epub-formatter) data-type)
+  (format t "~a~%" "epub formatter's process logic goes here"))
+
+(defclass mobi-formatter ()
+  nil)
+
+(defmethod process ((self mobi-formatter) data-type)
+  (format t "~a~%" "mobi formatter's process logic goes here"))
+```
+
 
 
