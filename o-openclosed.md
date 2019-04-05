@@ -80,3 +80,41 @@ For example, a new Rectangle class and area method.
      (get-height self)))
 
 ```
+
+### Full Better Example
+```scheme
+
+(defclass shape ()
+  nil)
+
+(defclass circle (shape)
+  ((radius
+    :initarg :radius
+    :reader get-radius)))
+
+(defmethod area ((self shape))
+  (* pi (get-radius self) (get-radius self)))
+
+(defmethod rectangle (shape)
+  ((width
+    :initarg :width
+    :reader get-width)
+   (height
+    :initarg :height
+    :reader get-height)))
+
+(defmethod area ((self rectangle))
+  (* (get-width self)
+     (get-height self)))
+
+(defclass area-calculator ()
+  ((shapes
+    :initarg :shapes
+    :reader get-shapes)))
+
+(defmethod total-area ((self area-calculator))
+  (reduce #'+
+          (mapcar #'area
+                  (get-shapes self))))
+
+```
