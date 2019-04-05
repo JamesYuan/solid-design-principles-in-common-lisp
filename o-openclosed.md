@@ -60,3 +60,5 @@ Below code shows a better example.
                   (get-shapes self))))
 
 ```
+
+As you've noticed, we moved the function to calculate circle area into its Circle class.  
