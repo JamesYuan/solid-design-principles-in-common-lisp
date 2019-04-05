@@ -86,7 +86,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
   ((width
     :initarg :width
     :reader get-width)
-    
+
    (height
     :initarg :height
     :reader get-height)))
