@@ -132,5 +132,8 @@ For example, a new Rectangle class and area method which calculates a simple Rec
                  (list (make-instance 'rectangle :height 5 :width 10)
                        (make-instance 'rectangle :height 9 :width 20)
                        (make-instance 'rectangle :height 23 :width 44))))
+               
+(total-area *circle-one*) ;; 559.2034923389832d0
+(total-area *rectangle-one*) ;; 1242
 
 ```
