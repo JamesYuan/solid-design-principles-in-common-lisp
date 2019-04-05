@@ -5,21 +5,15 @@
 ### Bad
 
 ```scheme
-
 (defclass truck ()
   ((brand
    :initarg :brand
-   :accessor brand)))
+   :reader get-brand)))
 
-(defmethod get-brand ((self truck))
-  (brand self))
-
-(defmethod set-brand ((self truck) new-brand)
-  (setf (brand self) new-brand))
 
 (defmethod send-detail ((self truck) customer-id)
   "send truck's brand detail to customer..")
-  
+
 (defclass truck ()
   ((brand
    :initarg :brand
@@ -30,13 +24,11 @@
 
 (defmethod set-brand ((self truck) new-brand)
   (setf (brand self) new-brand))
-  
 ```
 
 ### Good
 
 ```scheme
-
 (defclass detail-sender ()
   ((customer-id
     :initarg :customer-id
@@ -51,4 +43,6 @@
 (defmethod send-detail ((self detail-sender))
   (send (customer-id self)))
 ```
+
+
 
