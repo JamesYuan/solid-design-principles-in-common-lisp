@@ -62,3 +62,21 @@ Below code shows a better example.
 ```
 
 As you've noticed, we moved the function to calculate circle area into its Circle class. This way, if we want to calculate a Rectangle shape area (or triangle, etc), we only have to create a new class with its own method to handle Rectangle area calculation.
+
+For example, a new Rectangle class and area method.
+
+```scheme
+
+(defmethod rectangle (shape)
+  ((width
+    :initarg :width
+    :reader get-width)
+   (height
+    :initarg :height
+    :reader get-height)))
+
+(defmethod area ((self rectangle))
+  (* (get-width self)
+     (get-height self)))
+
+```
