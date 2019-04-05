@@ -23,13 +23,20 @@
   nil)
 
 (defmethod process ((self epub-formatter) data-type)
-  (format t "~a~%" "epub formatter's process logic goes here"))
+  (format t "~a~%data-type: ~a~%"
+          "epub formatter's process logic goes here"
+          data-type))
 
 (defclass mobi-formatter ()
   nil)
 
 (defmethod process ((self mobi-formatter) data-type)
-  (format t "~a~%" "mobi formatter's process logic goes here."))
+  (format t "~a~%data-type: ~a~%"
+          "mobi formatter's process logic goes here"
+          data-type))
+
+
+
 ```
 
 ### Good
