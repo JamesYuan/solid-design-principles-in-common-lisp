@@ -34,9 +34,14 @@
   (format t "~a~%data-type: ~a~%"
           "mobi formatter's process logic goes here"
           data-type))
+          
+(defparameter epub-book (make-instance 'printer :data-type "epubs"))
+(defparameter mobi-book (make-instance 'printer :data-type "mobis"))
 
-
-
+(print-epub epub-book)
+(print-mobi mobi-book)
+;; mobi formatter's process logic goes here
+;; data-type: epubs
 ```
 
 ### Good
