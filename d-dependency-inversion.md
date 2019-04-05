@@ -18,21 +18,18 @@
 (defmethod print-mobi ((self printer))
   (let ((m (make-instance 'mobi-formatter)))
     (process m (get-data-type self))))
-    
+
 (defclass epub-formatter ()
   nil)
 
-(defmethod process ((self epub-formatter) data-type)
+(defmethod process ((self epub-formatter))
   (format t "~a~%" "epub formatter's process logic goes here"))
 
 (defclass mobi-formatter ()
   nil)
 
-(defmethod process ((self mobi-formatter) data-type)
+(defmethod process ((self mobi-formatter))
   (format t "~a~%" "mobi formatter's process logic goes here"))
-
-
-
 ```
 
 ### Good
