@@ -29,7 +29,7 @@
   nil)
 
 (defmethod process ((self mobi-formatter) data-type)
-  (format t "~a~%" "mobi formatter's process logic goes here"))
+  (format t "~a~%" "mobi formatter's process logic goes here."))
 ```
 
 ### Good
