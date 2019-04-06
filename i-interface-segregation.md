@@ -80,9 +80,9 @@
 (defmethod b-run ((penguin penguin))
   (format t "~a~%" "the penguin runs"))
 
-\(defparameter clawy \(make-instance 'parrot\)\)
+(defparameter clawy (make-instance 'parrot))
 
-\(defparameter pingu \(make-instance 'penguin\)\)
+(defparameter pingu (make-instance 'penguin))
 
 
 
