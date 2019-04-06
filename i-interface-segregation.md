@@ -81,9 +81,11 @@ Let's make it better, shall we?
 ### Good
 
 ```lisp
+;; interface
 (defclass bird ()
   nil)
 
+;; interface body (mandatory methods to be implemented)
 (defgeneric b-eat (bird))
 (defgeneric b-sleep (bird))
 
@@ -131,6 +133,7 @@ Let's make it better, shall we?
 (b-eat pingu) ;; the penguin eats
 (b-sleep pingu) ;; the penguin sleeps
 (b-run pingu) ;; the penguin runs
+
 ```
 
 
