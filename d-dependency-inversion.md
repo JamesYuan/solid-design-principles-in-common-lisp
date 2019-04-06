@@ -11,18 +11,18 @@
     :initarg :data-type
     :reader get-data-type)))
 
-(defmethod print-epub ((self printer))
+(defmethod print-epub ((printer printer))
   (let ((e (make-instance 'epub-formatter)))
-    (process e (get-data-type self))))
+    (process e (get-data-type printer))))
 
-(defmethod print-mobi ((self printer))
+(defmethod print-mobi ((printer printer))
   (let ((m (make-instance 'mobi-formatter)))
-    (process m (get-data-type self))))
+    (process m (get-data-type printer))))
 
 (defclass epub-formatter ()
   nil)
 
-(defmethod process ((self epub-formatter) data-type)
+(defmethod process ((epub-formatter epub-formatter) data-type)
   (format t "~a~%data-type: ~a~%"
           "epub formatter's process logic goes here"
           data-type))
@@ -30,7 +30,7 @@
 (defclass mobi-formatter ()
   nil)
 
-(defmethod process ((self mobi-formatter) data-type)
+(defmethod process ((mobi-formatter mobi-formatter) data-type)
   (format t "~a~%data-type: ~a~%"
           "mobi formatter's process logic goes here"
           data-type))
@@ -55,14 +55,14 @@
     :initarg :data-type
     :reader get-data-type)))
 
-(defmethod prints ((self printer) formatter)
+(defmethod prints ((printer printer) formatter)
   (let ((f (make-instance formatter)))
-    (process f (get-data-type self))))
+    (process f (get-data-type printer))))
 
 (defclass epub-formatter ()
   nil)
 
-(defmethod process ((self epub-formatter) data-type)
+(defmethod process ((epub-formatter epub-formatter) data-type)
   (format t "~a~%data-type: ~a~%"
           "epub formatter's process logic goes here"
           data-type))
@@ -70,7 +70,7 @@
 (defclass mobi-formatter ()
   nil)
 
-(defmethod process ((self mobi-formatter) data-type)
+(defmethod process ((mobi-formatter mobi-formatter) data-type)
   (format t "~a~%data-type: ~a~%"
           "mobi formatter's process logic goes here"
           data-type))
