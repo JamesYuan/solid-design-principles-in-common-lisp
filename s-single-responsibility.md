@@ -13,7 +13,6 @@
 
    (report
     :initarg :report
-    :initform ""
     :reader get-report
     :accessor report)))
 
