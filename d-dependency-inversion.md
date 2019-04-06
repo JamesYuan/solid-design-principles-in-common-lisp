@@ -9,6 +9,10 @@ Dependency Inversion Principle encourages us to create higher level modules with
 
 Well, low-level modules are more specific to the individual components focusing os smaller details of the application. This *low-level* module should be used in *high-level* modules in the application.
 
+While *high-level* modules are more abstract and general in nature. They handle *low-level* modules and decide the logic for what goes where.
+
+Think about a computer CPU (high-level) handling bunch of hardware inputs (low-level) including keyboard and mouse inputs.
+
 ### Bad
 
 ```lisp
