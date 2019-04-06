@@ -4,7 +4,7 @@
 
 ##### in other words: Likov's Substitution Principle states that if a program module is using a Base class, then the reference to the Base class can be replaced with a Derived class without affecting the functionality of the program module.
 
-```scheme
+```lisp
 
 
 (defclass rectangle ()
