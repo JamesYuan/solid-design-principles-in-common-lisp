@@ -22,12 +22,15 @@ See below for a SRP violation example
     :reader get-report
     :accessor report)))
 
+;; this is okay. mailer should deliver a report.
 (defmethod deliver ((status-report-mailer status-report-mailer))
   (format t
           "send email to ~a with email content/body: ~a~%"
           (get-address status-report-mailer)
           (get-report status-report-mailer)))
 
+;; this is incorrect; mailer class should not be responsible
+;; for generating a report
 (defmethod generate-report ((status-report-mailer status-report-mailer))
   (let ((r (concatenate 'string
                         "status number: "
