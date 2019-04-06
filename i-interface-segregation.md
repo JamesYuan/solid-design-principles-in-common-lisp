@@ -2,7 +2,7 @@
 
 ##### Clients should not be forced to depend upon interfaces that they do not use.
 
-Because Common Lisp in particular doesn't have interface (but we got ***macros***, but let's put that aside for the advanced)
+Because Common Lisp in particular doesn't have interface (but we got ***macros*** to properly simulate one, but let's put that aside for the advanced)
 
  similar to static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
 
