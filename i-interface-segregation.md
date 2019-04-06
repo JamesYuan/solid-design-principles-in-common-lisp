@@ -138,6 +138,6 @@ Let's make it better, shall we?
 
 Better. We just have to make it more explicit of the bird types.
 
-We placed them into two distinct categories that also implements `bird`, which is `flightless-bird` and `flying-bird`. Both can eat and sleep, but only the one that implements `flightless-bird` have to also implement `b-run` method. This is the same for the client that implements `flying-bird`. It just need to care for extra `b-fly` method.
+We placed them into two distinct categories that also implements `bird`, which is `flightless-bird` and `flying-bird`. Both can eat and sleep, but only the one that implements `flightless-bird` have to also implement `b-run` method. This is the same for the client that implements `flying-bird`. It just need to care for extra `b-fly` method. No need to implement methods that certain client won't need. Hurray!
 
 
