@@ -81,9 +81,12 @@ Let's fix this by moving `generate-report` method into its own class.
           (get-address status-report-mailer)
           (get-report status-report-mailer)))
 
+
 (defclass status-report-generator ()
   nil)
 
+;; we only need to change this part if you wish to generate JSON ;; based report, etc without touching status-report-mailer
+;; class.
 (defmethod generate ((status-report-generator status-report-generator))
   (concatenate 'string
                "status number: "
