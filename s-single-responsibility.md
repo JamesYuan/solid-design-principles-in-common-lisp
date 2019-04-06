@@ -5,25 +5,40 @@
 ### Bad
 
 ```scheme
-(defclass truck ()
-  ((brand
-   :initarg :brand
-   :reader get-brand)))
+
+(in-package :cl-user)
+(defpackage reserve
+  (:use :cl))
+(in-package :reserve)
+
+(defclass status-report-mailer ()
+  ((address
+    :initarg :address
+    :reader get-address)
+
+   (report
+    :initarg :report
+    :initform ""
+    :reader get-report
+    :accessor report)))
+
+(defmethod deliver ((status-report-mailer status-report-mailer))
+  (format t
+          "send email to ~a with email content/body: ~a~%"
+          (get-address status-report-mailer)
+          (get-report status-report-mailer)))
+
+(defmethod generate-report ((status-report-mailer status-report-mailer))
+  (let ((r (concatenate 'string
+                        "status number: "
+                        (write-to-string (random 500))
+                        ". this is a status report for slow server boot time "
+                        "estimating around "
+                        (write-to-string (random 200))
+                        " seconds from time to fully boot.")))
+    (setf (report status-report-mailer) r)))
 
 
-(defmethod send-detail ((truck truck) customer-id)
-  "send truck's brand detail to customer..")
-
-(defclass truck ()
-  ((brand
-   :initarg :brand
-   :accessor brand)))
-
-(defmethod get-brand ((truck truck))
-  (brand truck))
-
-(defmethod set-brand ((truck truck) new-brand)
-  (setf (brand truck) new-brand))
 ```
 
 ### Good
