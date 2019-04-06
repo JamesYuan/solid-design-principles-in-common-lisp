@@ -76,6 +76,8 @@ Let's see why this is bad, below.
 
 A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. These extra useless code can lead to redundancy.
 
+Let's make it better, shall we?
+
 ### Good
 
 ```lisp
