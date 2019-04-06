@@ -85,11 +85,11 @@
 (defparameter pingu (make-instance 'penguin))
 
 
-(b-eat clawy)
+(b-eat clawy) ;; the parrot eats
 
-(b-sleep clawy)
+(b-sleep clawy) ;; the parrot sleeps
 
-(b-fly clawy)
+(b-fly clawy) ;; the parrot flies
 
 
 (b-eat pingu)
