@@ -38,6 +38,14 @@
                         " seconds from time to fully boot.")))
     (setf (report status-report-mailer) r)))
 
+(defparameter rm1
+  (make-instance 'status-report-mailer
+                 :address "dummy@email.com"))
+(generate-report rm1) 
+;; "status number: 361. this is a status report for slow server
+;; boot time estimating around 173
+;; seconds from time to fully boot."
+(deliver rm1)
 
 ```
 
