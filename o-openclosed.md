@@ -46,10 +46,8 @@ Below code shows a better example.
 ### Good
 
 ```lisp
-(defclass shape ()
-  nil)
 
-(defclass circle (shape)
+(defclass circle ()
   ((radius
     :initarg :radius
     :reader get-radius)))
@@ -82,7 +80,7 @@ As you've noticed, we moved the function to calculate circle area into its Circl
 For example, a new Rectangle class and area method which calculates a simple Rectangle shape area \(a = w \* h\)
 
 ```lisp
-(defclass rectangle (shape)
+(defclass rectangle ()
   ((width
     :initarg :width
     :reader get-width)
@@ -99,10 +97,8 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 ### Full Better Example
 
 ```lisp
-(defclass shape ()
-  nil)
 
-(defclass circle (shape)
+(defclass circle ()
   ((radius
     :initarg :radius
     :reader get-radius)))
@@ -110,7 +106,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 (defmethod area ((circle circle))
   (* pi (get-radius circle) (get-radius circle)))
 
-(defclass rectangle (shape)
+(defclass rectangle ()
   ((width
     :initarg :width
     :reader get-width)
