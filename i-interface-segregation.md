@@ -81,5 +81,23 @@
   (format t "~a~%" "the penguin runs"))
 ```
 
+\(defparameter clawy \(make-instance 'parrot\)\)
 
+\(defparameter pingu \(make-instance 'penguin\)\)
+
+
+
+\(b-eat clawy\)
+
+\(b-sleep clawy\)
+
+\(b-fly clawy\)
+
+
+
+\(b-eat pingu\)
+
+\(b-sleep pingu\)
+
+\(b-run pingu\)
 
