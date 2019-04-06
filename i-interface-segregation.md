@@ -74,7 +74,7 @@ Let's see why this is bad, below.
 (b-fly pingu) ;; this is wrong. a penguin cannot fly! :(
 ```
 
-A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. These extra useless code can lead to redundancy.
+A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. You see, both Penguin and Parrot `is a` Bird, but they don't behave the same way and both differs in abilities and weaknesses (one can fly, but the other doesn't). These extra useless code can lead to redundancy.
 
 Let's make it better, shall we?
 
@@ -136,5 +136,6 @@ Let's make it better, shall we?
 
 ```
 
+So, we made a su
 
 
