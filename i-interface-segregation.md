@@ -50,7 +50,7 @@
 
 (b-eat clawy) ;; the parrot eats
 (b-sleep clawy) ;; the parrot sleeps
-(b-run clawy) ;; this is wrong. a parrot cannot really run! :(
+(b-run clawy) ;; this is wrong!. a parrot cannot really run! :(
 (b-fly clawy) ;; the parrot flies
 
 (b-eat pingu) ;; the penguin eats
