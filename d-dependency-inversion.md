@@ -3,6 +3,8 @@
 * ##### High level modules should not depend upon low level modules. Both should depend upon abstractions.
 * ##### Abstractions should not depend upon details. Details should depend upon asbtractions.
 
+Dependency Inversion Principle encourages us to create higher level modules with its complex logic in such a way to be reusable and unaffected by any change from the lower level modules in our application. To achieve this kind of behavior in our apps, we introduce abstraction which decouples higher from lower level modules.
+
 ### Bad
 
 ```lisp
