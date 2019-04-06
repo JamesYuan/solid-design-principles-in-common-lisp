@@ -2,7 +2,7 @@
 
 ##### Clients should not be forced to depend upon interfaces that they do not use.
 
-Because Common Lisp in particular doesn't have interface similar to static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
+Because Common Lisp in particular doesn't have interface similar to static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance. (we got ***macros***, but let's put that aside for the advanced)
 
 But, we'll try simulate this with `defgeneric` just for fun.
 
@@ -74,7 +74,7 @@ Let's see why this is bad, below.
 (b-fly pingu) ;; this is wrong. a penguin cannot fly! :(
 ```
 
-A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. You see, both Penguin and Parrot `is a` Bird, but they don't behave the same way and both differs in abilities and weaknesses (one can fly, but the other doesn't). These extra useless code can lead to redundancy.
+A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. You see, both Penguin and Parrot `is a` Bird, both also can eat and sleep, but they don't behave the same way and both differs in abilities and weaknesses (one can fly, but the other doesn't). These extra useless code can lead to redundancy.
 
 Let's make it better, shall we?
 
@@ -136,6 +136,8 @@ Let's make it better, shall we?
 
 ```
 
-So, we made a su
+Better. We just have to make it more explicit of the bird types.
+
+We placed them into two distinct categories that also implements `bird`, which is `flightless-bird` and `flying-bird`. Both can at and sleep, but only the one that implements `flightless-bird` have to also implement `b-run` method. This is the same for the client that implements `flying-bird`. It just need to care for extra `b-fly` method.
 
 
