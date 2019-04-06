@@ -8,7 +8,7 @@ Take a look at the open/closed principle violation example below.
 
 ### Bad
 
-```scheme
+```lisp
 (defclass circle ()
   ((radius
     :initarg :radius
@@ -45,7 +45,7 @@ Below code shows a better example.
 
 ### Good
 
-```scheme
+```lisp
 (defclass shape ()
   nil)
 
@@ -81,7 +81,7 @@ As you've noticed, we moved the function to calculate circle area into its Circl
 
 For example, a new Rectangle class and area method which calculates a simple Rectangle shape area \(a = w \* h\)
 
-```scheme
+```lisp
 (defclass rectangle (shape)
   ((width
     :initarg :width
@@ -98,7 +98,7 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 
 ### Full Better Example
 
-```scheme
+```lisp
 (defclass shape ()
   nil)
 
