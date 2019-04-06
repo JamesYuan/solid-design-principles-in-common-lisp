@@ -92,10 +92,12 @@
 (b-fly clawy) ;; the parrot flies
 
 
-(b-eat pingu)
+(b-eat pingu) ;; the penguin eats
 
-(b-sleep pingu)
 
-(b-run pingu)
+(b-sleep pingu) ;; the penguin sleeps
+
+(b-run pingu) ;; the penguin runs
+
 
 ```
