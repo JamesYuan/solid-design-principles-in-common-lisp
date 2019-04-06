@@ -5,6 +5,8 @@
 
 Dependency Inversion Principle encourages us to create higher level modules with its complex logic in such a way to be reusable and unaffected by any change from the lower level modules in our application. To achieve this kind of behavior in our apps, we introduce abstraction which decouples higher from lower level modules.
 
+### Wait! What are these *low-level* and *high-level* modules again?
+
 ### Bad
 
 ```lisp
