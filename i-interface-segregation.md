@@ -9,7 +9,7 @@ But, we'll try simulate it with `defgeneric`.
 ### So, what is all the fuss about Interface Segregation?
 Basically, you don't have to implement and to depend on methods that are irrelevant for the client (eg. a class)
 
-Let's see below, why this is bad.
+Let's see why this is bad, below.
 
 ### Bad
 
