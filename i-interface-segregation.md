@@ -4,7 +4,7 @@
 
 ### Bad
 
-```scheme
+```lisp
 (defclass bird ()
   nil)
 
@@ -62,7 +62,7 @@
 
 ### Good
 
-```scheme
+```lisp
 
 (defclass bird ()
   nil)
