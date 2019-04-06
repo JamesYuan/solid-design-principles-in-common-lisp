@@ -5,7 +5,7 @@
 
 ### Bad
 
-```scheme
+```lisp
 (defclass printer ()
   ((data-type
     :initarg :data-type
@@ -49,7 +49,7 @@
 
 ### Good
 
-```scheme
+```lisp
 (defclass printer ()
   ((data-type
     :initarg :data-type
