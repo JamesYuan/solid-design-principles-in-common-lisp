@@ -11,7 +11,7 @@
    :reader get-brand)))
 
 
-(defmethod send-detail ((self truck) customer-id)
+(defmethod send-detail ((truck truck) customer-id)
   "send truck's brand detail to customer..")
 
 (defclass truck ()
@@ -19,11 +19,11 @@
    :initarg :brand
    :accessor brand)))
 
-(defmethod get-brand ((self truck))
-  (brand self))
+(defmethod get-brand ((truck truck))
+  (brand truck))
 
-(defmethod set-brand ((self truck) new-brand)
-  (setf (brand self) new-brand))
+(defmethod set-brand ((truck truck) new-brand)
+  (setf (brand truck) new-brand))
 ```
 
 ### Good
@@ -34,14 +34,14 @@
     :initarg :customer-id
     :accessor customer-id)))
 
-(defmethod get-customer-id ((self detail-sender))
-  (customer-id self))
+(defmethod get-customer-id ((detail-sender detail-sender))
+  (customer-id detail-sender))
 
-(defmethod set-customer-id ((self detail-sender) new-customer-id)
-    (setf (customer-id self) new-customer-id))
+(defmethod set-customer-id ((detail-sender detail-sender) new-customer-id)
+    (setf (customer-id detail-sender) new-customer-id))
 
-(defmethod send-detail ((self detail-sender))
-  (send (customer-id self)))
+(defmethod send-detail ((detail-sender detail-sender))
+  (send (customer-id detail-sender)))
 ```
 
 
