@@ -60,6 +60,8 @@ See below for a SRP violation example
 
 As you can see above, `status-report-mailer` class is handling both distinct functionalities. Report generation and report delivery. This will force you to modify `status-report-mailer` class if you wish to set up a new value or generate different kind of report template, which it has nothing to do with.
 
+Let's fix this by moving `generate-report` method into its own class.
+
 ### Good
 
 ```lisp
