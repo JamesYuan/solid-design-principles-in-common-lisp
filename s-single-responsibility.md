@@ -45,7 +45,7 @@
 (deliver rm1)
 ;; send email to dummy@email.com with email content/body:
 ;; status number: 361. this is a status report for 
-;;slow server boot time estimating around
+;; slow server boot time estimating around
 ;; 173 seconds from time to fully boot.
 
 ```
