@@ -3,7 +3,7 @@
 * Single Responsibility Principle
 * Open/Closed Principle
 * Liskov Substitution Principle
-* Interface Segregation Principle \(we are not going to cover this\)
+* Interface Segregation Principle
 * Dependency Inversion Principle
 
 
