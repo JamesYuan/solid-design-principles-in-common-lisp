@@ -94,7 +94,6 @@
 
 (b-eat pingu) ;; the penguin eats
 
-
 (b-sleep pingu) ;; the penguin sleeps
 
 (b-run pingu) ;; the penguin runs
