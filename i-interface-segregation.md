@@ -79,7 +79,6 @@
 
 (defmethod b-run ((penguin penguin))
   (format t "~a~%" "the penguin runs"))
-```
 
 \(defparameter clawy \(make-instance 'parrot\)\)
 
@@ -87,17 +86,18 @@
 
 
 
-\(b-eat clawy\)
+(b-eat clawy)
 
-\(b-sleep clawy\)
+(b-sleep clawy)
 
-\(b-fly clawy\)
+(b-fly clawy)
 
 
 
-\(b-eat pingu\)
+(b-eat pingu)
 
-\(b-sleep pingu\)
+(b-sleep pingu)
 
-\(b-run pingu\)
+(b-run pingu)
 
+```
