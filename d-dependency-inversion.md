@@ -7,6 +7,8 @@ Dependency Inversion Principle encourages us to create higher level modules with
 
 ### Wait! What are these *low-level* and *high-level* modules again?
 
+Well, low-level modules are more specific to the individual components focusing os smaller details of the application. This *low-level* module should be used in *high-level* modules in the application.
+
 ### Bad
 
 ```lisp
