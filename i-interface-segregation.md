@@ -74,6 +74,8 @@ Let's see why this is bad, below.
 (b-fly pingu) ;; this is wrong. a penguin cannot fly! :(
 ```
 
+A Penguin can't fly. A Parrot can't (let's say) run. These classes doesn't have to depend on `b-fly` and `b-run` methods where they doesn't make sense. 
+
 ### Good
 
 ```lisp
