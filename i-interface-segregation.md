@@ -11,6 +11,7 @@
 (defgeneric b-eat (bird))
 (defgeneric b-sleep (bird))
 (defgeneric b-fly (bird))
+(defgeneric b-run (bird)
 
 (defclass parrot (bird)
   nil)
@@ -23,6 +24,11 @@
 
 (defmethod b-fly ((parrot parrot))
   (format t "~a~%" "the parrot flies"))
+  
+(defmethod b-run ((parrot parrot))
+  (format t 
+          "~a~%"
+          "this is wrong! a parrot cannot really run! :(")
 
 (defclass penguin (bird)
   nil)
