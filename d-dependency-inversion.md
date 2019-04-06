@@ -103,5 +103,8 @@ Let's fix it below.
 ;; data-type: mobis
 ```
 
+We have moved both `print-epub` and `print-mobi` into separate classes. Now they can do their own things, and whenever we need to print an ebook, we are going to pass either `epub-formatter` or `mobi-formatter` to `printer` constructor, then call `prints` to execute the method based on the class we passed.
+
+Now, our classes are not tightly coupled with the lower-tier objects and we can easily reuse the logic from the high-tier modules.
 
 
