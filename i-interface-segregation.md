@@ -5,7 +5,6 @@
 ### Bad
 
 ```scheme
-
 (defclass bird ()
   nil)
 
@@ -36,6 +35,50 @@
 
 (defmethod b-fly ((penguin penguin))
   (format t "~a~%" "this is wrong. penguin cannot fly! :("))
+```
+
+### Good
+
+```scheme
+(defclass bird ()
+  nil)
+
+(defgeneric b-eat (bird))
+(defgeneric b-sleep (bird))
+
+(defclass flightless-bird (bird)
+  nil)
+
+(defgeneric b-run (flightless-bird))
+
+(defclass flying-bird (bird)
+  nil)
+
+(defgeneric b-fly (flying-bird))
+
+(defclass parrot (flying-bird)
+  nil)
+
+(defmethod b-eat ((parrot parrot))
+  (format t "~a~%" "the parrot eats"))
+
+(defmethod b-sleep ((parrot parrot))
+  (format t "~a~%" "the parrot sleeps"))
+
+(defmethod b-fly ((parrot parrot))
+  (format t "~a~%" "the parrot flies"))
+
+(defclass penguin (flightless-bird)
+  nil)
+
+(defmethod b-eat ((penguin penguin))
+  (format t "~a~%" "the penguin eats"))
+
+(defmethod b-sleep ((penguin penguin))
+  (format t "~a~%" "the penguin sleeps"))
+
+(defmethod b-run ((penguin penguin))
+  (format t "~a~%" "the penguin runs"))
 ```
 
 
