@@ -10,7 +10,7 @@ Please note we have a [code of conduct](https://github.com/common-lisp-reserve/c
 * [gitbook-cli (2.3.2)](https://www.npmjs.com/package/gitbook-cli)
 
 ### Requirements
-* All contributions for the books ***must*** comply with the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
+* All contributions for the books ***must*** comply with the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
 
 ## Pull Request Process
 
