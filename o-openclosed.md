@@ -37,7 +37,7 @@ Take a look at the open/closed principle violation example below.
 (total-area *circle-one*) ;; 204.20352248333654d0
 ```
 
-If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula \(a = pi \* r^2\) without modifying `total-area` method.
+If we do want `total-area` method to calculate a sum of Rectangle areas instead of Circle, we won't be able to do that due to its specific area calculation formula \(a = pi \* r^2\) for a circle area without modifying `total-area` method.
 
 So how can we go over this limit?
 
