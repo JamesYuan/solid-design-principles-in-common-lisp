@@ -4,7 +4,7 @@
 
 Because Common Lisp in particular doesn't have interface similar to static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
 
-But, we'll try simulate it with `defgeneric`.
+But, we'll try simulate this with `defgeneric` just for fun.
 
 ### So, what is all the fuss about Interface Segregation?
 Basically, you don't have to implement and to depend on methods that are irrelevant for the client (eg. a class).
