@@ -60,6 +60,7 @@ See DI violation below.
 
 `printer` (high-level) class had to depend on `print-epub` and `print-mobi` which are both low-level modules. This breaks the " *High level modules should not depend upon low level modules. Both should depend upon abstractions.*" keypoint.
 
+Let's fix it below.
 
 ### Good
 
