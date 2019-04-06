@@ -46,7 +46,7 @@ Let's see why this is bad, below.
 (defclass penguin (bird)
   nil)
 
-(defmethod b-eats ((penguin penguin))
+(defmethod b-eat ((penguin penguin))
   (format t "~a~%" "the penguin eats"))
 
 (defmethod b-sleep ((penguin penguin))
