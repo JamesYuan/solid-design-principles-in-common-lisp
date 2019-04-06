@@ -42,21 +42,21 @@
   (format t "~a~%" "the penguin runs"))
 
 (defmethod b-fly ((penguin penguin))
-  (format t "~a~%" "this is wrong. penguin cannot fly! :("))
+  (format t "~a~%" "this is wrong. a penguin cannot fly! :("))
 
 
 (defparameter clawy (make-instance 'parrot))
 (defparameter pingu (make-instance 'penguin))
 
-(b-run clawy)
-(b-sleep clawy)
-(b-run clawy)
-(b-fly clawy)
+(b-eat clawy) ;; the parrot eats
+(b-sleep clawy) ;; the parrot sleeps
+(b-run clawy) ;; this is wrong. a parrot cannot really run! :(
+(b-fly clawy) ;; the parrot flies
 
-(b-run pingu)
-(b-sleep pingu)
-(b-run pingu)
-(b-fly pingu)
+(b-eat pingu) ;; the penguin eats
+(b-sleep pingu) ;; the penguin sleeps
+(b-run pingu) ;; the penguin runs
+(b-fly pingu) ;; this is wrong. a penguin cannot fly! :(
 
 ```
 
@@ -107,12 +107,12 @@
 (defparameter clawy (make-instance 'parrot))
 (defparameter pingu (make-instance 'penguin))
 
-(b-run clawy)
+(b-eat clawy)
 (b-sleep clawy)
 (b-run clawy)
 (b-fly clawy)
 
-(b-run pingu)
+
 (b-sleep pingu)
 (b-run pingu)
 (b-fly pingu)
