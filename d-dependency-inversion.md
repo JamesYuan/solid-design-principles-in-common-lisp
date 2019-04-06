@@ -13,6 +13,7 @@ While *high-level* modules are more abstract and general in nature. They handle 
 
 Think about a computer CPU (high-level) handling bunch of hardware inputs (low-level) including keyboard and mouse inputs.
 
+See DI violation below.
 ### Bad
 
 ```lisp
