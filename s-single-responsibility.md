@@ -3,6 +3,9 @@
 ##### A class should have one, and  only one, reason to change.
 The idea is to make a class only handle a single relevant responsibility (though, this is up to the programmer to decide).
 
+Martin suggests that we define each responsibility of a class as a reason for change.  If you can think of more than one motivation for changing a class, it probably has more than one responsibility.
+
+See below for a SRP violation example
 
 ### Bad
 
