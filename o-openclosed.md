@@ -19,13 +19,13 @@ Take a look at the open/closed principle violation example below.
     :initarg :shapes
     :reader get-shapes)))
 
-(defmethod total-area ((self area-calculator))
+(defmethod total-area ((area-calculator area-calculator))
   (reduce #'+
           (mapcar #'(lambda (x)
                       (* pi
                          (get-radius x)
                          (get-radius x)))
-                  (get-shapes self))))
+                  (get-shapes area-calculator))))
 
 (defparameter *circle-one*
   (make-instance 'area-calculator
@@ -54,18 +54,18 @@ Below code shows a better example.
     :initarg :radius
     :reader get-radius)))
 
-(defmethod area ((self shape))
-  (* pi (get-radius self) (get-radius self)))
+(defmethod area ((shape shape))
+  (* pi (get-radius shape) (get-radius shape)))
 
 (defclass area-calculator ()
   ((shapes
     :initarg :shapes
     :reader get-shapes)))
 
-(defmethod total-area ((self area-calculator))
+(defmethod total-area ((area-calculator area-calculator))
   (reduce #'+
           (mapcar #'area
-                  (get-shapes self))))
+                  (get-shapes area-calculator))))
 
 (defparameter *circle-one*
   (make-instance 'area-calculator
@@ -91,9 +91,9 @@ For example, a new Rectangle class and area method which calculates a simple Rec
     :initarg :height
     :reader get-height)))
 
-(defmethod area ((self rectangle))
-  (* (get-width self)
-     (get-height self)))
+(defmethod area ((rectangle rectangle))
+  (* (get-width rectangle)
+     (get-height rectangle)))
 ```
 
 ### Full Better Example
@@ -107,8 +107,8 @@ For example, a new Rectangle class and area method which calculates a simple Rec
     :initarg :radius
     :reader get-radius)))
 
-(defmethod area ((self shape))
-  (* pi (get-radius self) (get-radius self)))
+(defmethod area ((circle circle))
+  (* pi (get-radius circle) (get-radius circle)))
 
 (defclass rectangle (shape)
   ((width
@@ -119,19 +119,19 @@ For example, a new Rectangle class and area method which calculates a simple Rec
     :initarg :height
     :reader get-height)))
 
-(defmethod area ((self rectangle))
-  (* (get-width self)
-     (get-height self)))
+(defmethod area ((rectangle rectangle))
+  (* (get-width rectangle)
+     (get-height rectangle)))
 
 (defclass area-calculator ()
   ((shapes
     :initarg :shapes
     :reader get-shapes)))
 
-(defmethod total-area ((self area-calculator))
+(defmethod total-area ((area-calculator area-calculator))
   (reduce #'+
           (mapcar #'area
-                  (get-shapes self))))
+                  (get-shapes area-calculator))))
 
 (defparameter *circle-one*
   (make-instance 'area-calculator
