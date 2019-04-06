@@ -84,7 +84,6 @@
 
 (defparameter pingu (make-instance 'penguin))
 
-
 (b-eat clawy)
 
 (b-sleep clawy)
