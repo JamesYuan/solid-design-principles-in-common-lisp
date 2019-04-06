@@ -41,6 +41,8 @@
 (defparameter rm1
   (make-instance 'status-report-mailer
                  :address "dummy@email.com"))
+                 
+;; generated status and boot time may differ from yours
 (generate-report rm1) 
 ;; "status number: 361. this is a status report for slow server
 ;; boot time estimating around 173
