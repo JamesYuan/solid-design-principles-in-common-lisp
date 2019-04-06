@@ -62,7 +62,7 @@
 
 ### Good
 
-```lisp
+```lisps
 
 (defclass bird ()
   nil)
