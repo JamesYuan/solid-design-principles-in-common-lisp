@@ -58,6 +58,9 @@ See DI violation below.
 ;; data-type: mobis
 ```
 
+`printer` class (high-level) had to depend on `print-epub` and `print-mobi` which are both low-level modules. This breaks the " *High level modules should not depend upon low level modules. Both should depend upon abstractions.*"
+
+
 ### Good
 
 ```lisp
