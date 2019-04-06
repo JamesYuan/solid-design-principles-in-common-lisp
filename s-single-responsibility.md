@@ -46,6 +46,10 @@
 ;; boot time estimating around 173
 ;; seconds from time to fully boot."
 (deliver rm1)
+;; send email to dummy@email.com with email content/body:
+;; status number: 174. this is a status report for 
+;;slow server boot time estimating around
+;; 7 seconds from time to fully boot.
 
 ```
 
