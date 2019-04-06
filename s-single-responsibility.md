@@ -4,7 +4,7 @@
 
 ### Bad
 
-```scheme
+```lisp
 
 (defclass status-report-mailer ()
   ((address
@@ -52,7 +52,7 @@
 
 ### Good
 
-```scheme
+```lisp
 
 (defclass status-report-mailer ()
   ((address
