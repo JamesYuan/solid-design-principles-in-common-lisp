@@ -53,19 +53,46 @@
 ### Good
 
 ```scheme
-(defclass detail-sender ()
-  ((customer-id
-    :initarg :customer-id
-    :accessor customer-id)))
 
-(defmethod get-customer-id ((detail-sender detail-sender))
-  (customer-id detail-sender))
+(defclass status-report-mailer ()
+  ((address
+    :initarg :address
+    :reader get-address)
 
-(defmethod set-customer-id ((detail-sender detail-sender) new-customer-id)
-    (setf (customer-id detail-sender) new-customer-id))
+   (report
+    :initarg :report
+    :reader get-report)))
 
-(defmethod send-detail ((detail-sender detail-sender))
-  (send (customer-id detail-sender)))
+(defmethod deliver ((status-report-mailer status-report-mailer))
+  (format t
+          "send email to ~a with email content/body: ~a~%"
+          (get-address status-report-mailer)
+          (get-report status-report-mailer)))
+
+(defclass status-report-generator ()
+  nil)
+
+(defmethod generate ((status-report-generator status-report-generator))
+  (concatenate 'string
+               "status number: "
+               (write-to-string (random 500))
+               ". this is a status report for slow server boot time "
+               "estimating around "
+               (write-to-string (random 200))
+               " seconds from time to fully boot."))
+
+(defparameter report-data
+  (make-instance 'status-report-generator))
+(defparameter mailer
+  (make-instance 'status-report-mailer
+                 :address "dummy@email.com"
+                 :report (generate report-data)))
+(deliver mailer)
+;; send email to dummy@email.com with email content/body:
+;; status number: 91. this is a status report for
+;; slow server boot time estimating around 70
+;; seconds from time to fully boot.
+
 ```
 
 
