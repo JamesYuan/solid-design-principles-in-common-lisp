@@ -1,6 +1,6 @@
 # SOLID Design Principles In Common Lisp
 
-Learn how to apply SOLID design principles with Common Lisp and the CLOS and defclass.
+Learn how to apply SOLID design principles with Common Lisp and the CLOS via defclass.
 
 
 
