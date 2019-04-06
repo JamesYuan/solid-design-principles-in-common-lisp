@@ -57,13 +57,11 @@
 (b-sleep pingu) ;; the penguin sleeps
 (b-run pingu) ;; the penguin runs
 (b-fly pingu) ;; this is wrong. a penguin cannot fly! :(
-
 ```
 
 ### Good
 
 ```lisp
-
 (defclass bird ()
   nil)
 
@@ -105,22 +103,16 @@
   (format t "~a~%" "the penguin runs"))
 
 (defparameter clawy (make-instance 'parrot))
-
 (defparameter pingu (make-instance 'penguin))
 
-
 (b-eat clawy) ;; the parrot eats
-
 (b-sleep clawy) ;; the parrot sleeps
-
 (b-fly clawy) ;; the parrot flies
 
-
 (b-eat pingu) ;; the penguin eats
-
 (b-sleep pingu) ;; the penguin sleeps
-
 (b-run pingu) ;; the penguin runs
-
-
 ```
+
+
+
