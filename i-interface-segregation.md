@@ -2,7 +2,7 @@
 
 ##### Clients should not be forced to depend upon interfaces that they do not use.
 
-Because Common Lisp in particular doesn't have interface like in a static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
+Because Common Lisp in particular doesn't have interface similar to static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
 
 But, we'll try simulate it with `defgeneric` like mixin.
 
