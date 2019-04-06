@@ -6,11 +6,6 @@
 
 ```scheme
 
-(in-package :cl-user)
-(defpackage reserve
-  (:use :cl))
-(in-package :reserve)
-
 (defclass status-report-mailer ()
   ((address
     :initarg :address
