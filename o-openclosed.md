@@ -54,8 +54,8 @@ Below code shows a better example.
     :initarg :radius
     :reader get-radius)))
 
-(defmethod area ((shape shape))
-  (* pi (get-radius shape) (get-radius shape)))
+(defmethod area ((circle circle))
+  (* pi (get-radius circle) (get-radius circle)))
 
 (defclass area-calculator ()
   ((shapes
