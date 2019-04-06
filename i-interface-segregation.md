@@ -7,7 +7,7 @@ Because Common Lisp in particular doesn't have interface similar to static-typed
 But, we'll try simulate it with `defgeneric`.
 
 ### So, what is all the fuss about Interface Segregation?
-Basically, you don't have to implement and to depend on methods that are irrelevant for the client (eg. a class). 
+Basically, you don't have to implement and to depend on methods that are irrelevant for the client (eg. a class).
 
 Let's see why this is bad, below.
 
@@ -33,6 +33,9 @@ Let's see why this is bad, below.
 
 (defmethod b-fly ((parrot parrot))
   (format t "~a~%" "the parrot flies"))
+  
+;; in some other language, you are forced to implement this
+;; even if it does not make sense for this parrot class.
 (defmethod b-run ((parrot parrot))
   (format t
           "~a~%"
@@ -50,6 +53,9 @@ Let's see why this is bad, below.
 (defmethod b-run ((penguin penguin))
   (format t "~a~%" "the penguin runs"))
 
+;; in some other language, you are forced to implement this
+;; even if it does not make sense for this penguin class.
+;; since when a penguin can fly, huh? This is not a Puffin bird.
 (defmethod b-fly ((penguin penguin))
   (format t "~a~%" "this is wrong. a penguin cannot fly! :("))
 
