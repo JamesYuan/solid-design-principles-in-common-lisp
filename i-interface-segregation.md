@@ -49,23 +49,16 @@
 ### Good
 
 ```scheme
+
 (defclass bird ()
   nil)
 
 (defgeneric b-eat (bird))
 (defgeneric b-sleep (bird))
+(defgeneric b-fly (bird))
+(defgeneric b-run (bird))
 
-(defclass flightless-bird (bird)
-  nil)
-
-(defgeneric b-run (flightless-bird))
-
-(defclass flying-bird (bird)
-  nil)
-
-(defgeneric b-fly (flying-bird))
-
-(defclass parrot (flying-bird)
+(defclass parrot (bird)
   nil)
 
 (defmethod b-eat ((parrot parrot))
@@ -76,11 +69,15 @@
 
 (defmethod b-fly ((parrot parrot))
   (format t "~a~%" "the parrot flies"))
+(defmethod b-run ((parrot parrot))
+  (format t
+          "~a~%"
+          "this is wrong! a parrot cannot really run! :("))
 
-(defclass penguin (flightless-bird)
+(defclass penguin (bird)
   nil)
 
-(defmethod b-eat ((penguin penguin))
+(defmethod b-eats ((penguin penguin))
   (format t "~a~%" "the penguin eats"))
 
 (defmethod b-sleep ((penguin penguin))
@@ -89,23 +86,23 @@
 (defmethod b-run ((penguin penguin))
   (format t "~a~%" "the penguin runs"))
 
-(defparameter clawy (make-instance 'parrot))
+(defmethod b-fly ((penguin penguin))
+  (format t "~a~%" "this is wrong. penguin cannot fly! :("))
 
+
+(defparameter clawy (make-instance 'parrot))
 (defparameter pingu (make-instance 'penguin))
 
+(b-run clawy)
+(b-sleep clawy)
+(b-run clawy)
+(b-fly clawy)
 
-(b-eat clawy) ;; the parrot eats
+(b-run pingu)
+(b-sleep pingu)
+(b-run pingu)
+(b-fly pingu)
 
-(b-sleep clawy) ;; the parrot sleeps
-
-(b-fly clawy) ;; the parrot flies
-
-
-(b-eat pingu) ;; the penguin eats
-
-(b-sleep pingu) ;; the penguin sleeps
-
-(b-run pingu) ;; the penguin runs
 
 
 ```
