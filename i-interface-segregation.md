@@ -5,6 +5,9 @@
 Because Common Lisp in particular doesn't have interface like in a static-typed language like Java or C#, and due to the Lisp's ability to do multiple inheritance, this principle carry little importance.
 
 But, we'll try simulate it with `defgeneric` like mixin.
+
+### So, what is all the fuss about Interface Segregation?
+
 ### Bad
 
 ```lisp
