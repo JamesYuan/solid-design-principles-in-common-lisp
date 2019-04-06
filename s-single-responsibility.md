@@ -1,6 +1,8 @@
 # S: Single Responsibility
 
 ##### A class should have one, and  only one, reason to change.
+The idea is to make a class only handle a single relevant responsibility (though, this is up to the programmer to decide).
+
 
 ### Bad
 
