@@ -7,6 +7,7 @@ Because Common Lisp in particular doesn't have interface like in a static-typed 
 But, we'll try simulate it with `defgeneric` like mixin.
 
 ### So, what is all the fuss about Interface Segregation?
+Basically,you don't have to implement and to depend on methods that are irrelevant for the client (eg. a class)
 
 ### Bad
 
