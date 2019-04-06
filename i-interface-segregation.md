@@ -38,6 +38,9 @@
 
 (defmethod b-sleep ((penguin penguin))
   (format t "~a~%" "the penguin sleeps"))
+  
+(defmethod b-run ((penguin penguin))
+ (format t "~a~%" "the penguin runs"))
 
 (defmethod b-fly ((penguin penguin))
   (format t "~a~%" "this is wrong. penguin cannot fly! :("))
