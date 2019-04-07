@@ -42,7 +42,6 @@ So how can we go over this limit?
 
 Below code shows a better example.
 
-### Good
 
 ```lisp
 
@@ -92,8 +91,6 @@ For example, a new Rectangle class and area method which calculates a simple Rec
   (* (get-width rectangle)
      (get-height rectangle)))
 ```
-
-### Full Better Example
 
 ```lisp
 
