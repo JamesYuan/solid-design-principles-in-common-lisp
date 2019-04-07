@@ -61,8 +61,6 @@ See DI violation below.
 
 Let's fix it below.
 
-### Good
-
 ```lisp
 (defclass printer ()
   ((data-type
