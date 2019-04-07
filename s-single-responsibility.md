@@ -69,44 +69,33 @@ Let's fix this by moving `generate-report` method into its own class.
 (defclass status-report-mailer ()
   ((address
     :initarg :address
-    :reader get-address)
+    :reader address)
 
    (report
     :initarg :report
-    :reader get-report)))
+    :reader report)))
+
+(defclass status-report-generator () nil)
 
 (defmethod deliver ((status-report-mailer status-report-mailer))
   (format t
-          "send email to ~a with email content/body: ~a~%"
-          (get-address status-report-mailer)
-          (get-report status-report-mailer)))
+          "Send email to ~a with content: ~a~%"
+          (address status-report-mailer)
+          (report status-report-mailer)))
 
-
-(defclass status-report-generator ()
-  nil)
-
-;; we only need to change this part if you wish to generate JSON ;; based report, etc without touching status-report-mailer
-;; class.
 (defmethod generate ((status-report-generator status-report-generator))
-  (concatenate 'string
-               "status number: "
-               (write-to-string (random 500))
-               ". this is a status report for slow server boot time "
-               "estimating around "
-               (write-to-string (random 200))
-               " seconds from time to fully boot."))
+  (format nil
+          "Status Number: ~a~%This is a status report for slow server boot time estimating around ~a seconds from time to fully boot.~%"
+          (random 500)
+          (random 200)))
 
-(defparameter report-data
-  (make-instance 'status-report-generator))
-(defparameter mailer
+(defparameter *mailer*
   (make-instance 'status-report-mailer
-                 :address "dummy@email.com"
-                 :report (generate report-data)))
-(deliver mailer)
-;; send email to dummy@email.com with email content/body:
-;; status number: 91. this is a status report for
-;; slow server boot time estimating around 70
-;; seconds from time to fully boot.
+                 :address "admin@email.com"
+                 :report (generate (make-instance
+                                    'status-report-generator))))
+                                    
+(deliver *mailer*)
 
 ```
 
