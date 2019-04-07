@@ -6,7 +6,6 @@ What this means is that we should write code that doesn't have to be changed eve
 
 Take a look at the open/closed principle violation example below.
 
-### Bad
 
 ```lisp
 (defclass circle ()
@@ -101,50 +100,68 @@ For example, a new Rectangle class and area method which calculates a simple Rec
 (defclass circle ()
   ((radius
     :initarg :radius
-    :reader get-radius)))
-
-(defmethod area ((circle circle))
-  (* pi (get-radius circle) (get-radius circle)))
+    :reader radius
+    :type integer)))
 
 (defclass rectangle ()
   ((width
     :initarg :width
-    :reader get-width)
+    :reader width
+    :type integer)
 
    (height
     :initarg :height
-    :reader get-height)))
+    :reader height
+    :type integer)))
 
-(defmethod area ((rectangle rectangle))
-  (* (get-width rectangle)
-     (get-height rectangle)))
-
-(defclass area-calculator ()
+(defclass compound-shape ()
   ((shapes
     :initarg :shapes
-    :reader get-shapes)))
+    :reader shapes
+    :type list)))
 
-(defmethod total-area ((area-calculator area-calculator))
+(defgeneric area (shape)
+  (:documentation "calculate an area given the shape class"))
+
+(defmethod area ((circle circle))
+  (* pi
+     (radius circle)
+     (radius circle)))
+
+(defmethod area ((rectangle rectangle))
+  (* (width rectangle)
+     (height rectangle)))
+
+(defmethod total-area ((compound-shape compound-shape))
   (reduce #'+
           (mapcar #'area
-                  (get-shapes area-calculator))))
+                  (shapes compound-shape))))
 
-(defparameter *circle-one*
-  (make-instance 'area-calculator
-                 :shapes
-                 (list (make-instance 'circle :radius 5)
-                       (make-instance 'circle :radius 3)
-                       (make-instance 'circle :radius 12))))
+(defparameter *total-circle-area*
+  (total-area
+   (make-instance 'compound-shape
+                  :shapes
+                  (list
+                   (make-instance 'circle
+                                  :radius 5)
+                   (make-instance 'circle
+                                  :radius 6)))))
 
-(defparameter *rectangle-one*
-  (make-instance 'area-calculator
-                 :shapes
-                 (list (make-instance 'rectangle :height 5 :width 10)
-                       (make-instance 'rectangle :height 9 :width 20)
-                       (make-instance 'rectangle :height 23 :width 44))))
+(defparameter *total-rectangle-area*
+  (total-area
+   (make-instance 'compound-shape
+                  :shapes
+                  (list
+                   (make-instance 'rectangle
+                                  :width 5
+                                  :height 12)
+                   (make-instance 'rectangle
+                                  :width 6
+                                  :height 10)))))
+                                  
+*total-circle-area*
+*total-rectangle-area*
 
-(total-area *circle-one*) ;; 559.2034923389832d0
-(total-area *rectangle-one*) ;; 1242
 ```
 
 
