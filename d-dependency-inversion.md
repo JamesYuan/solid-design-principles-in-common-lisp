@@ -104,4 +104,41 @@ We have moved both `print-epub` and `print-mobi` into separate classes. Now they
 
 Now, our classes are not tightly coupled with the lower-tier objects and we can easily reuse the logic from the high-tier modules.
 
+```lisp
+(defclass printer ()
+  ((amount
+    :initarg :amount
+    :reader amount
+    :type integer)))
+
+(defclass epub (printer) nil)
+(defclass mobi (printer) nil)
+
+(defgeneric print-book (book-format)
+  (:documentation "print a book given the book format class"))
+
+(defmethod print-book ((epub epub))
+  (format t
+          "~a: ~a~%"
+          "epub formatter logic goes here"
+          (amount epub)))
+
+(defmethod print-book ((mobi mobi))
+  (format t
+          "~a: ~a~%"
+          "mobi formatter logic goes here"
+          (amount mobi)))
+
+(defparameter *gatsby-in-epub*
+  (make-instance 'epub
+                 :amount 100))
+
+(defparameter *dracula-in-mobi*
+  (make-instance 'mobi
+                 :amount 900))
+
+(print-book *gatsby-in-epub*)
+(print-book *dracula-in-mobi*)
+```
+
 
