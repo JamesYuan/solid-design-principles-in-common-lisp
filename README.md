@@ -2,7 +2,7 @@
 
 Learn how to apply SOLID design principles with Common Lisp and the CLOS via defclass.
 
-### v0.1
+### v0.1 (going through major update)
 
 ![](https://i.creativecommons.org/l/by/4.0/88x31.png)
 
