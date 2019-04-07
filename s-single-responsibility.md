@@ -61,7 +61,6 @@ As you can see above, `status-report-mailer` class is handling both distinct fun
 Let's fix this by moving `generate-report` method into its own class.
 
 ```lisp
-
 (defclass status-report-mailer ()
   ((address
     :initarg :address
@@ -75,13 +74,15 @@ Let's fix this by moving `generate-report` method into its own class.
 
 (defmethod deliver ((status-report-mailer status-report-mailer))
   (format t
-          "Send email to ~a with content: ~a~%"
+          "Send email to ~a with content:
+           ~a~%"
           (address status-report-mailer)
           (report status-report-mailer)))
 
 (defmethod generate ((status-report-generator status-report-generator))
   (format nil
-          "Status Number: ~a~%This is a status report for slow server boot time estimating around ~a seconds from time to fully boot.~%"
+          "Status Number: ~a
+           Boot Time: ~a"
           (random 500)
           (random 200)))
 
